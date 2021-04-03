@@ -5,6 +5,7 @@ GameOfLife::GameOfLife(uint32_t w, uint32_t h) {
     width = w;
     height = h;
 
+    // create 2d array
     board = new GOLCell*[height];
     for (uint32_t i = 0; i < height; i++) {
         board[i] = new GOLCell[width];
@@ -51,6 +52,7 @@ void GameOfLife::updateAll() {
         for (uint32_t j = 0; j < width; j++) {
             GOLCellStateChange stateChange = board[i][j].commit();
 
+            // if cell state changed, inform neighbors
             if (stateChange != GOLCellStateChange::NO_CHANGE) {
                 Position current;
                 current.x = j;
@@ -85,6 +87,7 @@ bool GameOfLife::findAdjacent(Position p, Position &newp, uint32_t dir, bool wra
 }
 
 bool GameOfLife::getCell(uint32_t cellX, uint32_t cellY) {
+    // check if cell is in bounds
     if (cellX >= 0 && cellX < width && cellY >= 0 && cellY < height) {
         return board[cellY][cellX].isAlive();
     }
