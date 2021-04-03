@@ -19,6 +19,10 @@ Pressing *ENTER* will move the cells to the next state.
 Pressing *SPACE* will automatically move the cells to the next state every frame.
 Using the *Arrow Keys* will move the viewport.
 
+If you click a cell, it will toggle from dead to alive. This way, you can set the live tiles at runtime to play with it. If you give a file as a commandline argument, that will be used as the initial state. The file must be formatted with: 2 numbers representing the *width* and *height* of the game board, followed by (width * height) characters, either 0 or 1 representing dead or alive. See testfile.txt for an example.
+
+Without an argument, the board will be 1000 by 1000.
+
 # Acknowledgements
 
 Using [olcPixelGameEngine](https://github.com/OneLoneCoder/olcPixelGameEngine/)
