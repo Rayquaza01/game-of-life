@@ -40,6 +40,8 @@ GOLCellStateChange GOLCell::commit() {
     } else if (!nextState && isLiving) {
         return GOLCellStateChange::DEAD;
     }
+
+    return GOLCellStateChange::NO_CHANGE;
 }
 
 void GOLCell::neighborUpdate(GOLCellStateChange n) {
