@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
     PGEGame pgegame(argv[1]);
 
-    if (pgegame.Construct(128, 128, 2, 2)) {
+    if (pgegame.Construct(64, 64, 4, 4)) {
         pgegame.Start();
     }
 
