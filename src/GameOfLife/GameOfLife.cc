@@ -85,5 +85,8 @@ bool GameOfLife::findAdjacent(Position p, Position &newp, uint32_t dir, bool wra
 }
 
 bool GameOfLife::getCell(uint32_t cellX, uint32_t cellY) {
-    return board[cellY][cellX].isAlive();
+    if (cellX >= 0 && cellX < width && cellY >= 0 && cellY < height) {
+        return board[cellY][cellX].isAlive();
+    }
+    return false;
 }
